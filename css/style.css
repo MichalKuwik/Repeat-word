@@ -50,19 +50,20 @@
 }
 /* .head------------------------------------------------------------- */
 
-.text{
-    height: 30vh;
+.content{
+    height: 50vh;
     color:white;
     text-align: center;
     margin-top:3rem;
 }
-.text h5{
+.content h5{
     font-size:1rem;
 }
-.text h2{
+.content h2{
     font-size:4.5rem;
     font-weight: 300;
     margin-top:1.5rem;
+    color:darkgray;
 }
 .first-counter{
     color:red;
@@ -73,6 +74,22 @@ input[type="text"]{
     font-size:1.8rem;
     border:2px solid #ccc;
     margin-top:2.5rem;
+    margin-bottom:2rem;
+}
+
+h3{
+    font-size:1.5rem;
+    font-weight: 400;
+    margin-bottom: .5rem;
+}
+
+.instruction{
+    width:80%;
+    margin: 2rem auto;
+    background: #ccc;
+    border-radius: 20px;
+    padding: 10px;
+    text-align: center;
 }
 
 @media screen and (max-width:500px){
@@ -80,5 +97,8 @@ input[type="text"]{
         width:80%;
         margin-top:2rem;
         font-size: 1.5rem;
+    }
+    h3{
+        font-size:1rem;
     }
 }

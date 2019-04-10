@@ -48,3 +48,29 @@
         margin-left:0.5rem;
     }
 }
+/* .head------------------------------------------------------------- */
+
+.text{
+    height: 30vh;
+    color:white;
+    text-align: center;
+    margin-top:3rem;
+}
+.text h5{
+    font-size:1rem;
+}
+.text h2{
+    font-size:4.5rem;
+    font-weight: 300;
+    margin-top:1.5rem;
+}
+.first-counter{
+    color:red;
+}
+
+input[type="text"]{
+    width:50%;
+    font-size:2rem;
+    border:2px solid #ccc;
+    margin-top:2.5rem;
+}

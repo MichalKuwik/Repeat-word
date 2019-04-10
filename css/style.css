@@ -38,3 +38,13 @@
     margin-left:1rem;
     color:white;
 }
+
+@media screen and (max-width:500px){
+    .head h1{
+        font-size: 1.5rem;
+    }
+    .head i{
+        font-size:1.5rem;
+        margin-left:0.5rem;
+    }
+}

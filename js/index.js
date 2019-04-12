@@ -1,3 +1,6 @@
+//check if load function on load
+window.addEventListener('load',init);
+
 //Globals variables
 let time = 5; //time in game active
 let score = 0; //scrore of your game
@@ -16,4 +19,20 @@ const words = [
     'czapka','mama','tata','drzewo','owoc','koc','kot','pies','praca','myszka','pluszak','łóżko','ubranie','bliźniaki','bohater','szczęście',
     'magia','zło','dobro','palec','telewizor','dywan','komputer','programowanie','javascript','miłość','pranie','obraz','światło','prąd','plecy','dyskopatia','zegar','okulary','samochód','drzwi','gra','przegrania','wygrana','życie'
 ];
-console.log(words.length);
+// console.log(words.length);
+
+//Initialize Game function
+
+function init(){
+    //load word from array
+    showWord(words);
+}
+
+//function pick & show random word
+function showWord(words){
+    //get random index of array
+    const randIndex = Math.floor(Math.random() * words.length);
+    //Output random word
+    currentWord.innerHTML = words[randIndex];
+    
+}

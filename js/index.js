@@ -1,21 +1,23 @@
 //check if load function on load
 window.addEventListener('load',init);
 
+
 //Globals variables
 
 //Available Levels
 const levels = {
-    easy:7,
+    easy:6,
     medium: 4,
     hard: 2
 }
 
 //To change level
-const currentLevel = levels.easy;
+let currentLevel = levels.medium;
 
 let time = currentLevel; //time in game active
 let score = 0; //scrore of your game
 let isPlaying; // ,not inicjaling ,when game is runnig,when not is false
+
 
 //I get DOM elements
 
@@ -26,6 +28,11 @@ const timeDisplay = document.querySelector('span.second-counter'); //time in h3
 const message = document.querySelector('h5.message'); // h5 message value 'correct or bad'
 const seconds = document.querySelector('span.first-counter');// first-counter time to left
 
+//get buttons level DOM
+const btnE = document.querySelector('button.easy');
+const btnM = document.querySelector('button.medium');
+const btnH = document.querySelector('button.hard');
+
 const words = [
     'czapka','mama','tata','drzewo','owoc','koc','kot','pies','praca','myszka','pluszak','łóżko','ubranie','bliźniaki','bohater','szczęście',
     'magia','zło','dobro','palec','telewizor','dywan','komputer','programowanie','javascript','miłość','pranie','obraz','światło','prąd','plecy','dyskopatia','zegar','okulary','samochód','drzwi','gra','przegrana','wygrana','życie'
@@ -35,6 +42,7 @@ const words = [
 //Initialize Game function
 
 function init(){
+    
     //show number of seconds - levels
     seconds.innerHTML = currentLevel;
     //load word from array
@@ -112,3 +120,25 @@ function checkStatus(){
         score = -1;
     }
 }
+
+//addEventListener btns
+btnE.addEventListener('click',function(){
+    
+    currentLevel = levels.easy;
+    // console.log(currentLevel);
+    init();
+})
+
+btnM.addEventListener('click',function(){
+    
+    currentLevel = levels.medium;
+    // console.log(currentLevel);
+    init();
+})
+
+btnH.addEventListener('click',function(){
+    
+    currentLevel = levels.hard;
+    // console.log(currentLevel)
+    init();
+})

@@ -26,10 +26,31 @@ const words = [
 function init(){
     //load word from array
     showWord(words);
+    //write text in input
+    wordInput.addEventListener('input',startInput);
     //call countdown every second
     setInterval(countdown, 1000);
     //Check game status
     setInterval(checkStatus, 50);
+}
+
+//Start write in input function and 
+
+function startInput(){
+    if(matchWords()){
+        console.log('MATCH!');
+    }
+}
+
+//Match currentWord to wordInput equals input with currentWord from array is a simmilar
+function matchWords(){
+    if(wordInput.value === currentWord.innerHTML){
+        message.innerHTML = 'Prawidłowo!';
+        return true;
+    }else{
+        message.innerHTML = '';
+        return false;
+    }
 }
 
 //function pick & show random word

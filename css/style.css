@@ -51,7 +51,7 @@
 /* .head------------------------------------------------------------- */
 
 .content{
-    height: 60vh;
+    height: 65vh;
     color:white;
     text-align: center;
     margin-top:2rem;
@@ -115,6 +115,9 @@ h5.message{
     background: #000;
 }
 
+.buttons p{
+    margin-bottom:2rem;
+}
 /* .buttons--------------------------------------------------- */
 @media screen and (max-width:500px){
     input[type="text"]{
@@ -124,5 +127,17 @@ h5.message{
     }
     h3{
         font-size:1rem;
+    }
+    .buttons{
+        
+    }
+    button{
+        width:25%;
+        margin-top:1rem;
+        
+    }
+    .buttons p{
+        display: block;
+        margin-bottom: 0.5rem;
     }
 }

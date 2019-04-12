@@ -2,7 +2,18 @@
 window.addEventListener('load',init);
 
 //Globals variables
-let time = 5; //time in game active
+
+//Available Levels
+const levels = {
+    easy:5,
+    medium: 3,
+    hard: 2
+}
+
+//To change level
+const currentLevel = levels.medium;
+
+let time = currentLevel; //time in game active
 let score = 0; //scrore of your game
 let isPlaying; // ,not inicjaling ,when game is runnig,when not is false
 
@@ -24,6 +35,8 @@ const words = [
 //Initialize Game function
 
 function init(){
+    //show number of seconds - levels
+    seconds.innerHTML = currentLevel;
     //load word from array
     showWord(words);
     //write text in input
@@ -34,18 +47,33 @@ function init(){
     setInterval(checkStatus, 50);
 }
 
-//Start write in input function and 
+//if everything is correct,game is continues
 
 function startInput(){
     if(matchWords()){
-        console.log('MATCH!');
+        //then game is continue
+        isPlaying = true;
+        time = currentLevel + 1;
+        //show nwe word from array,clear input,increment score!
+        showWord(words);
+        wordInput.value = '';
+        score++;
     }
+    //if score is -1 display 0
+    if(score === -1){
+        scoreDisplay.innerHTML = `Wynik: 0`;
+    }else{
+        //initalize in DOM game score
+        scoreDisplay.innerHTML = `Wynik: ${score}`;
+    }
+    
 }
 
 //Match currentWord to wordInput equals input with currentWord from array is a simmilar
 function matchWords(){
     if(wordInput.value === currentWord.innerHTML){
         message.innerHTML = 'Prawidłowo!';
+        message.style.color = "green";
         return true;
     }else{
         message.innerHTML = '';
@@ -78,8 +106,9 @@ function countdown(){
 //function Check game status
 function checkStatus(){
     if(!isPlaying && time === 0){
-        message.innerHTML = 'Koniec czasu!';
-        message.style.color = "red";
-        message.style.textTransform = "uppercase";
+        message.innerHTML = 'Koniec gry!';
+        
+        //if end game reset score
+        score = -1;
     }
 }

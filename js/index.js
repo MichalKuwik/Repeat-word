@@ -5,13 +5,13 @@ window.addEventListener('load',init);
 
 //Available Levels
 const levels = {
-    easy:5,
-    medium: 3,
+    easy:7,
+    medium: 4,
     hard: 2
 }
 
 //To change level
-const currentLevel = levels.medium;
+const currentLevel = levels.easy;
 
 let time = currentLevel; //time in game active
 let score = 0; //scrore of your game
@@ -28,7 +28,7 @@ const seconds = document.querySelector('span.first-counter');// first-counter ti
 
 const words = [
     'czapka','mama','tata','drzewo','owoc','koc','kot','pies','praca','myszka','pluszak','łóżko','ubranie','bliźniaki','bohater','szczęście',
-    'magia','zło','dobro','palec','telewizor','dywan','komputer','programowanie','javascript','miłość','pranie','obraz','światło','prąd','plecy','dyskopatia','zegar','okulary','samochód','drzwi','gra','przegrania','wygrana','życie'
+    'magia','zło','dobro','palec','telewizor','dywan','komputer','programowanie','javascript','miłość','pranie','obraz','światło','prąd','plecy','dyskopatia','zegar','okulary','samochód','drzwi','gra','przegrana','wygrana','życie'
 ];
 // console.log(words.length);
 
@@ -97,7 +97,7 @@ function countdown(){
         time--;
     }else if(time === 0){
         //Game is over
-        isPlaying - false;
+        isPlaying = false;
     }
     //Show time in game
     timeDisplay.innerHTML = time;
@@ -107,7 +107,7 @@ function countdown(){
 function checkStatus(){
     if(!isPlaying && time === 0){
         message.innerHTML = 'Koniec gry!';
-        
+        message.style.color= 'red';
         //if end game reset score
         score = -1;
     }

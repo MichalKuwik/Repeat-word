@@ -28,6 +28,8 @@ function init(){
     showWord(words);
     //call countdown every second
     setInterval(countdown, 1000);
+    //Check game status
+    setInterval(checkStatus, 50);
 }
 
 //function pick & show random word
@@ -50,4 +52,13 @@ function countdown(){
     }
     //Show time in game
     timeDisplay.innerHTML = time;
+}
+
+//function Check game status
+function checkStatus(){
+    if(!isPlaying && time === 0){
+        message.innerHTML = 'Koniec czasu!';
+        message.style.color = "red";
+        message.style.textTransform = "uppercase";
+    }
 }
